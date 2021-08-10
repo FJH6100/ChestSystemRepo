@@ -468,7 +468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: 186}
+  m_AnchoredPosition: {x: 380.00003, y: 186}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &911366032
@@ -807,7 +807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 168, y: 186}
+  m_AnchoredPosition: {x: 248, y: 186}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1304137463
@@ -929,6 +929,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1722313042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1722313044}
+  - component: {fileID: 1722313043}
+  m_Layer: 0
+  m_Name: ChestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1722313043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722313042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c169d542031ec8d49920afc6f3b6e615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commonChest: {fileID: 2181763547471403764, guid: b507c1cb3dd9d614f9bf23e372ab6770, type: 3}
+  rareChest: {fileID: 2181763547471403764, guid: d3148ed73e9c50941a768e42857b253c, type: 3}
+  epicChest: {fileID: 2181763547471403764, guid: 40f7bf27ac2b8384f82d8b074f674dea, type: 3}
+  legendaryChest: {fileID: 2181763547471403764, guid: 3baddbf2ea48fc6409c13e5fe6398fc8, type: 3}
+--- !u!4 &1722313044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722313042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.31075045, y: -0.3324006, z: -54.006603}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1820859084
 GameObject:
@@ -1094,7 +1141,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2010078888}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1722313043}
+        m_TargetAssemblyTypeName: ChestManager, Assembly-CSharp
+        m_MethodName: SpawnChests
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2010078888
 MonoBehaviour:
   m_ObjectHideFlags: 0
