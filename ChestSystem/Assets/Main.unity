@@ -959,6 +959,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c169d542031ec8d49920afc6f3b6e615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slots:
+  - {fileID: 552434611}
+  - {fileID: 1820859086}
+  - {fileID: 1262245601}
+  - {fileID: 1533731216}
   commonChest: {fileID: 2181763547471403764, guid: b507c1cb3dd9d614f9bf23e372ab6770, type: 3}
   rareChest: {fileID: 2181763547471403764, guid: d3148ed73e9c50941a768e42857b253c, type: 3}
   epicChest: {fileID: 2181763547471403764, guid: 40f7bf27ac2b8384f82d8b074f674dea, type: 3}

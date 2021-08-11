@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChestManager : MonoBehaviour
 {
+    public Transform[] slots;
     GameObject[] chestList;
     public GameObject commonChest;
     public GameObject rareChest;
@@ -18,20 +19,34 @@ public class ChestManager : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            int value = Random.Range(1, 51);
-            if (value >= 1 && value <= 35)
-                chestList[i] = commonChest;
-            else if (value >= 36 && value <= 45)
-                chestList[i] = rareChest;
-            else if (value >= 46 && value <= 49)
-                chestList[i] = epicChest;
-            else
-                chestList[i] = legendaryChest;
+            if (chestList[i] == null)
+            {
+                int value = Random.Range(1, 51);
+                if (value >= 1 && value <= 35)
+                    chestList[i] = Instantiate(commonChest, slots[i].position - new Vector3(0, 0, 1), Quaternion.identity);
+                else if (value >= 36 && value <= 45)
+                    chestList[i] = Instantiate(rareChest, slots[i].position - new Vector3(0, 0, 1), Quaternion.identity);
+                else if (value >= 46 && value <= 49)
+                    chestList[i] = Instantiate(epicChest, slots[i].position - new Vector3(0, 0, 1), Quaternion.identity);
+                else
+                    chestList[i] = Instantiate(legendaryChest, slots[i].position - new Vector3(0, 0, 1), Quaternion.identity);
+            }
         }
-        Instantiate(chestList[0], new Vector3(-9, 0, -1), Quaternion.identity);
-        Instantiate(chestList[1], new Vector3(-3, 0, -1), Quaternion.identity);
-        Instantiate(chestList[2], new Vector3(3, 0, -1), Quaternion.identity);
-        Instantiate(chestList[3], new Vector3(9, 0, -1), Quaternion.identity);
     }
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            if (hit.collider != null)
+            {
+                if (hit.transform.gameObject.tag == "Chest")
+                {
+                    Destroy(hit.transform.gameObject);
+                }
+            }
+        }
+    }
+        
 }
 
