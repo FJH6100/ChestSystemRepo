@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChestManager : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class ChestManager : MonoBehaviour
     public GameObject rareChest;
     public GameObject epicChest;
     public GameObject legendaryChest;
+    int numCoins = 0;
+    int numGems = 0;
+    public Text coinText;
+    public Text gemText;
 
     void Start()
     {
@@ -42,10 +47,14 @@ public class ChestManager : MonoBehaviour
             {
                 if (hit.transform.gameObject.tag == "Chest")
                 {
+                    numCoins += hit.transform.gameObject.GetComponent<Chest>().rewardCoins();
+                    numGems += hit.transform.gameObject.GetComponent<Chest>().rewardGems();
                     Destroy(hit.transform.gameObject);
                 }
             }
         }
+        coinText.text = numCoins.ToString();
+        gemText.text = numGems.ToString();
     }
         
 }

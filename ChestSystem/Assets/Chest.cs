@@ -18,6 +18,15 @@ public class Chest : MonoBehaviour
         maxGems = chestData.maxGems;
     }
 
+    public int rewardCoins()
+    {
+        return Random.Range(minCoins, maxCoins + 1);
+    }
+    public int rewardGems()
+    {
+        return Random.Range(minGems, maxGems + 1);
+    }
+
     // Update is called once per frame
     void Update()
     {

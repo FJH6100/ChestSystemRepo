@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 328272516}
   - component: {fileID: 328272515}
   m_Layer: 5
-  m_Name: Text
+  m_Name: CoinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -968,6 +968,8 @@ MonoBehaviour:
   rareChest: {fileID: 2181763547471403764, guid: d3148ed73e9c50941a768e42857b253c, type: 3}
   epicChest: {fileID: 2181763547471403764, guid: 40f7bf27ac2b8384f82d8b074f674dea, type: 3}
   legendaryChest: {fileID: 2181763547471403764, guid: 3baddbf2ea48fc6409c13e5fe6398fc8, type: 3}
+  coinText: {fileID: 328272515}
+  gemText: {fileID: 2097037029}
 --- !u!4 &1722313044
 Transform:
   m_ObjectHideFlags: 0
@@ -1209,7 +1211,7 @@ GameObject:
   - component: {fileID: 2097037030}
   - component: {fileID: 2097037029}
   m_Layer: 5
-  m_Name: Text
+  m_Name: GemText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
